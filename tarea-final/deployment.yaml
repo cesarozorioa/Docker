@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: actividad-final-cesar-osorio-deployment
+  labels:
+    app: actividad-final-cesar-osorio
+spec:
+  replicas: 3  # Número de réplicas que deseas para tu aplicación
+  selector:
+    matchLabels:
+      app: actividad-final-cesar-osorio
+  template:
+    metadata:
+      labels:
+        app: actividad-final-cesar-osorio
+    spec:
+      containers:
+      - name: actividad-final-cesar-osorio-container
+        image: cesarozorioa/actividad-final-cesar-osorio:latest
+        ports:
+        - containerPort: 5000
